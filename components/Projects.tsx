@@ -45,13 +45,13 @@ export default function Projects() {
       category: "Website",
     },
     {
-      title: "Website Portfolio 1.0",
-      description: "Website portfolio pribadi yang saya buat untuk pertama kali, website dengan tampilan sederhana yang di buat hanya dengan html dan css tanpa fitur yang lengkap",
-      image: "/images/portofolio-1.0.png",
-      tags: ["HTML", "CSS", "JavaScript"],
+      title: "Attala Wedding Website",
+      description: "Website wedding yang saya buat untuk usaha catering wedding, yang di gunakan dengan bahasa pemrograman typescript dan tailwind css dan juga framework next.js",
+      image: "/images/wedding.png",
+      tags: ["TypeScript", "Tailwind CSS", "Next.Js"],
       liveUrl: "#home",
-      codeUrl: "https://github.com/SlthnFabsh/Portofolio",
-      category: "Portfolio",
+      codeUrl: "#home",
+      category: "Website",
     },
   ];
 

@@ -47,7 +47,7 @@ export default function Home() {
   }
 
   return (
-    <main className="relative px-10">
+    <main className="relative">
       <Header />
       <Hero />
       <About />

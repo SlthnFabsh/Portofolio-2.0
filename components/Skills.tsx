@@ -14,15 +14,15 @@ export default function Skills() {
 
   const frontendSkills: Skill[] = [
     { name: "HTML", percentage: 90 },
-    { name: "CSS", percentage: 85 },
-    { name: "JavaScript", percentage: 75 },
-    { name: "Bootstrap", percentage: 80 },
+    { name: "Next.js", percentage: 85 },
+    { name: "TypeScript", percentage: 75 },
+    { name: "Tailwind CSS", percentage: 80 },
   ];
 
   const backendSkills: Skill[] = [
-    { name: "Next.JS", percentage: 70 },
-    { name: "MySQL", percentage: 75 },
-    { name: "Git & GitHub", percentage: 80 },
+    { name: "Express.js", percentage: 70 },
+    { name: "Node.js", percentage: 75 },
+    { name: "MySQL", percentage: 80 },
   ];
 
   useEffect(() => {

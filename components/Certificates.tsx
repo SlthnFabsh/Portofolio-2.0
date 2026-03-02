@@ -11,10 +11,10 @@ interface Certificate {
 export default function Certificates() {
   const certificates: Certificate[] = [
     {
-      title: "Las Vegas Gambling World Championship",
-      issuer: "World Gambling Championship",
-      date: "2024",
-      image: "/images/casino.jpg",
+      title: "Cloud and Gen AI in AWS",
+      issuer: "Dicoding Indonesia",
+      date: "2026",
+      image: "/images/sertifikat1.png",
     },
     {
       title: "World Domino's God",

@@ -49,7 +49,7 @@ export default function Projects() {
       description: "Website wedding yang saya buat untuk usaha catering wedding, yang di gunakan dengan bahasa pemrograman typescript dan tailwind css dan juga framework next.js",
       image: "/images/wedding.png",
       tags: ["TypeScript", "Tailwind CSS", "Next.Js"],
-      liveUrl: "attalawedding.com",
+      liveUrl: "https://attalawedding.com",
       codeUrl: "https://github.com/SlthnFabsh",
       category: "Website",
     },

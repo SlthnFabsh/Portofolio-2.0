@@ -13,8 +13,9 @@ export default function Contact() {
     type: null,
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validation
@@ -29,12 +30,39 @@ export default function Contact() {
       return;
     }
 
-    // Simulate sending
-    setTimeout(() => {
-      setStatus({ type: "success", message: "Pesan berhasil dikirim! Terima kasih." });
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus({ type: null, message: "" }), 5000);
-    }, 1000);
+    setIsLoading(true);
+    setStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sultonlptp@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Pesan Portfolio dari ${formData.name}`,
+          _template: "table",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus({ type: "success", message: "Pesan berhasil dikirim! Terima kasih." });
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus({ type: null, message: "" }), 5000);
+      } else {
+        setStatus({ type: "error", message: "Gagal mengirim pesan. Silakan coba lagi." });
+      }
+    } catch {
+      setStatus({ type: "error", message: "Terjadi kesalahan jaringan. Silakan coba lagi." });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -109,19 +137,34 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-primary w-full justify-center group/btn hover:scale-105">
-                <FaPaperPlane className="group-hover/btn:rotate-45 transition-transform duration-300" />
-                <span>Kirim Pesan</span>
-                <FaArrowRight className="ml-auto group-hover/btn:translate-x-1 transition-transform duration-300" />
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="btn-primary w-full justify-center group/btn hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {isLoading ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
+                    <span>Mengirim...</span>
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane className="group-hover/btn:rotate-45 transition-transform duration-300" />
+                    <span>Kirim Pesan</span>
+                    <FaArrowRight className="ml-auto group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </>
+                )}
               </button>
 
               {status.type && (
                 <div
-                  className={`p-4 rounded-lg text-center text-sm ${
-                    status.type === "success"
-                      ? "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300"
-                      : "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300"
-                  }`}
+                  className={`p-4 rounded-lg text-center text-sm ${status.type === "success"
+                    ? "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300"
+                    : "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300"
+                    }`}
                 >
                   {status.message}
                 </div>
@@ -134,7 +177,7 @@ export default function Contact() {
             <div className="card p-8 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden group">
               {/* Background glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               <h3 className="text-xl font-semibold mb-6 relative z-10 group-hover:text-primary transition-colors duration-300">Informasi Kontak</h3>
 
               <div className="space-y-6 relative z-10">

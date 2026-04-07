@@ -76,7 +76,7 @@ export default function About() {
               <p className="animate-fade-in hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-300" style={{ animationDelay: '0.3s' }}>
                 Saya Sulthon Farizudin a.b, siswa SMK Taruna Bhakti jurusan Rekayasa Perangkat Lunak
                 (RPL). Saya memiliki ketertarikan besar dalam pengembangan website, terutama di bidang front-end
-                development. Dengan keahlian dalam HTML, CSS, JavaScript, dan PHP, saya senang menciptakan desain
+                development. Dengan keahlian dalam HTML, CSS, JavaScript, dan React, saya senang menciptakan desain
                 web yang menarik dan responsif.
               </p>
               <p className="animate-fade-in hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-300" style={{ animationDelay: '0.5s' }}>

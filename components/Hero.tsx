@@ -61,7 +61,7 @@ export default function Hero() {
                 <FaPaperPlane className="group-hover:rotate-45 transition-transform duration-300" />
                 <span>Hubungi Saya</span>
               </a>
-              <a href="/CV Sulthon.pdf" download className="btn-secondary hover-glow group">
+              <a href="/SULTON-CV.pdf" download className="btn-secondary hover-glow group">
                 <FaDownload className="group-hover:translate-y-1 transition-transform duration-300" />
                 <span>Download CV</span>
               </a>

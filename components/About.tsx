@@ -87,7 +87,7 @@ export default function About() {
             </div>
 
             {/* Download CV Button */}
-            <a href="/CV Sulthon.pdf" download className="btn-primary inline-flex hover-glow group animate-bounce-in" style={{ animationDelay: '0.7s' }}>
+            <a href="/SULTON-CV.pdf" download className="btn-primary inline-flex hover-glow group animate-bounce-in" style={{ animationDelay: '0.7s' }}>
               <FaDownload className="group-hover:translate-y-1 group-hover:scale-110 transition-transform duration-300" />
               <span>Download CV</span>
             </a>
